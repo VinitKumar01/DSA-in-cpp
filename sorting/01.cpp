@@ -27,6 +27,7 @@
 // Step 3: Pick 23 -> already bigger than the left element
 // Step 4: Pick 1 -> Swap to the element in left until it reaches it's correct position (element on left is smaller or the position is 0th index). Do it for the other elements until they reaches their correct position.
 // Final result: [1, 2, 7, 9, 20, 23]
+// Time complexity: Best-> O(N) Wrost-> O(N^2)
 
 #include <iostream>
 
