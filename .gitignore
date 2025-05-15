@@ -1,1 +1,14 @@
 .vscode
+# Ignore all files without extensions (typical for Unix/Linux executables)
+*
+
+# But don't ignore directories or important files
+!*/
+!*.cpp
+!*.h
+!*.hpp
+!*.c
+!*.cc
+!*.inl
+!*.txt
+!*.md
