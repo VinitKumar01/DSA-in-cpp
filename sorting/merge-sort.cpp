@@ -34,17 +34,17 @@ void merge(vector<int> &arr, int low, int mid, int high) {
   }
 }
 
-void mS(vector<int> &arr, int low, int high) {
+void divide(vector<int> &arr, int low, int high) {
   if (low == high)
     return;
 
   int mid = low + (high - low) / 2;
-  mS(arr, low, mid);
-  mS(arr, mid + 1, high);
+  divide(arr, low, mid);
+  divide(arr, mid + 1, high);
   merge(arr, low, mid, high);
 }
 
-void mergesort(vector<int> &arr, int n) { mS(arr, 0, n - 1); }
+void mergesort(vector<int> &arr, int n) { divide(arr, 0, n - 1); }
 
 int main() {
   vector<int> arr = {3, 1, 2, 4, 1, 5, 2, 6, 4};
