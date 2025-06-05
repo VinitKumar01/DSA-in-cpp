@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <iostream>
+#include <ostream>
 #include <vector>
 
 using namespace std;
@@ -37,17 +38,41 @@ void rotate_by_n_better(int arr[], int n, int size) {
   reverse(arr, arr + size);
 }
 
+void move_zero_to_end(int arr[], int size) {
+  int j = -1;
+  for (int i = 0; i < size; i++) {
+    if (arr[i] == 0) {
+      j = i;
+      break;
+    }
+  }
+
+  if (j == -1)
+    return;
+
+  for (int i = j + 1; i < size; i++) {
+    if (arr[i] != 0) {
+      swap(arr[i], arr[j]);
+      j++;
+    }
+  }
+}
+
 int main() {
   vector<int> arr = {1, 2, 3, 4, 5};
   rotate_by_n(arr, 3);
 
   int array[] = {1, 2, 3, 4, 5, 6, 7};
-
+  int arr_with_zero[] = {0, 1, 0, 0, 5, 1, 0, 0};
   int size = sizeof(array) / sizeof(int);
 
   rotate_by_n_better(array, 3, size);
-
+  move_zero_to_end(arr_with_zero, sizeof(arr_with_zero) / sizeof(int));
   for (int element : array) {
+    cout << element << " ";
+  }
+  cout << endl;
+  for (int element : arr_with_zero) {
     cout << element << " ";
   }
   cout << endl;
