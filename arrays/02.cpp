@@ -58,6 +58,16 @@ void move_zero_to_end(int arr[], int size) {
   }
 }
 
+int linear_search(int arr[], int number, int size) {
+  for (int i = 0; i < size; i++) {
+    if (arr[i] == number) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
 int main() {
   vector<int> arr = {1, 2, 3, 4, 5};
   rotate_by_n(arr, 3);
@@ -68,6 +78,8 @@ int main() {
 
   rotate_by_n_better(array, 3, size);
   move_zero_to_end(arr_with_zero, sizeof(arr_with_zero) / sizeof(int));
+  cout << linear_search(arr_with_zero, 5, sizeof(arr_with_zero) / sizeof(int))
+       << endl;
   for (int element : array) {
     cout << element << " ";
   }
